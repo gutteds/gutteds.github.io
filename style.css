@@ -13,51 +13,49 @@ body {
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-image: url(https://files.catbox.moe/bxxeq3.png);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  perspective: 1000px; /* For 3D effect */
+  background-image: none; /* Initially hide the background */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  perspective: 1000px;
 }
 
-.hidden {
-  display: none;
-}
 
 .landing {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh; /* Ensure it fills the viewport */
+}
+
+.hidden {
+  display: none;
 }
 
 .container {
   animation: fadeIn 3s ease-in-out;
   background: rgba(20, 20, 20, 0.8);
-  padding: 40px; /* Increased padding */
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   transition: transform 0.1s ease;
-  width: 90%; /* Adjust width */
-  max-width: 600px; /* Limit max width */
+  width: 90%;
+  max-width: 600px;
 }
 
 .profile-pic {
-  max-width: 150px; /* Set a maximum width */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Make it circular */
-  object-fit: cover; /* Ensure the image covers the area without stretching */
-  margin-bottom: 20px; /* Space below the image */
+  max-width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
 }
-
-
 
 .links {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* Allows z-index to work */
 }
 
 .links a {
@@ -68,26 +66,12 @@ body {
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
-  position: relative; /* Enable z-index */
-  z-index: 10; /* Bring it to front */
 }
 
 .link-icon {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
-}
-
-
-
-.links a:hover {
-  color: #fff;
-}
-
-.link-icon {
-  width: 50px; /* Size of the icon */
-  height: 50px; /* Size of the icon */
-  margin-right: 10px; /* Space between icon and text */
 }
 
 @keyframes fadeIn {
