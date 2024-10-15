@@ -1,84 +1,83 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background-color: #000;
-  color: #fff;
-  font-family: Inter, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background-image: none; /* Initially hide the background */
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  perspective: 1000px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #000; /* Set background to black */
+    color: #fff; /* Text color for visibility */
 }
 
-
-.landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Ensure it fills the viewport */
+#welcome-screen {
+    text-align: center;
 }
 
-.hidden {
-  display: none;
+#welcome-text {
+    cursor: pointer; /* Change cursor to pointer */
+    color: rgba(255, 255, 255, 0.8); /* Semi-transparent text color */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    font-size: 16px; /* Smaller font size */
 }
 
-.container {
-  animation: fadeIn 3s ease-in-out;
-  background: rgba(20, 20, 20, 0.8);
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  transition: transform 0.1s ease;
-  width: 90%;
-  max-width: 600px;
+#welcome-text:hover {
+    color: rgba(255, 255, 255, 1); /* Fully opaque text on hover */
 }
 
-.profile-pic {
-  max-width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
+#main-content {
+    text-align: center; /* Center text in main content */
+    margin-left: 0px; /* Move the whole content to the left */
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+h2 {
+    margin-left: -10px; /* Align heading with the profile picture */
 }
 
-.links a {
-  color: #fff;
-  text-decoration: none;
-  margin: 10px 0;
-  font-size: 1.5em;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
+#profile-section {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin: 20px auto; /* Center profile section */
+    position: relative; /* Position context for absolute elements */
 }
 
-.link-icon {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+#profile-picture {
+    width: 150px; /* Set width for the profile picture box */
+    height: 150px; /* Set height for the profile picture box */
+    overflow: hidden; /* Hide overflow if the image is larger */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+#profile-img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Ensure the image covers the area */
+    border: 2px solid #fff; /* White border around the image */
+}
+
+#typing-container {
+    font-size: 18px; /* Font size for typing text */
+    color: #fff; /* Text color */
+    white-space: nowrap; /* Prevent line breaks */
+    overflow: hidden; /* Hide overflow */
+    margin-left: 10px; /* Space from the profile picture */
+    position: absolute; /* Absolutely position the text */
+    left: 160px; /* Position to the right of the profile picture */
+    top: 50%; /* Center vertically relative to the profile picture */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+#social-links {
+    display: flex; /* Use flexbox for even spacing */
+    justify-content: center; /* Center the links */
+    margin-top: 10px; /* Space between the profile and links */
+}
+
+.social-icon {
+    width: 30px; /* Set a fixed width for icons */
+    height: 30px; /* Set a fixed height for icons */
+    margin: 0 5px; /* Space between icons */
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
 }
