@@ -1,27 +1,46 @@
-document.getElementById('enterButton').addEventListener('click', function() {
-  // Play music
-  document.getElementById('backgroundMusic').play();
-
-  // Hide landing page and show main content
-  document.getElementById('landingPage').classList.add('hidden');
-  document.getElementById('mainContent').classList.remove('hidden');
-
-  // Show background
-  document.body.style.backgroundImage = "url('https://files.catbox.moe/4hr6mf.gif')";
+document.getElementById('welcome-text').addEventListener('click', function() {
+    document.getElementById('welcome-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    
+    // Start the typing effect after clicking to enter
+    typeWord();
 });
 
-// 3D mouse movement effect
-const container = document.querySelector('.container');
+const words = ["OSINT | CSINT", "discord @pzrc", "rfz is a cute little skid",]; // Words to cycle through
+let wordIndex = 0;
+let letterIndex = 0;
+const typingText = document.getElementById("typing-text");
 
-document.addEventListener('mousemove', (event) => {
-  const { clientX, clientY } = event;
-  const x = (clientX / window.innerWidth - 0.5) * 30;
-  const y = (clientY / window.innerHeight - 0.5) * 30;
+function typeWord() {
+    if (letterIndex < words[wordIndex].length) {
+        typingText.textContent += words[wordIndex].charAt(letterIndex);
+        letterIndex++;
+        setTimeout(typeWord, 150); // Speed of typing
+    } else {
+        setTimeout(removeWord, 1000); // Wait before removing
+    }
+}
 
-  container.style.transform = `rotateY(${x}deg) rotateX(${-y}deg)`;
-});
-
-// Reset rotation when mouse leaves
-container.addEventListener('mouseleave', () => {
-  container.style.transform = 'rotateY(0deg) rotateX(0deg)';
+function removeWord() {
+    if (letterIndex > 0) {
+        typingText.textContent = words[wordIndex].substring(0, letterIndex);
+        letterIndex--;
+        setTimeout(removeWord, 100); // Speed of removing
+    } else {
+        wordIndex = (wordIndex + 1) % words.length; // Cycle through words
+        letterIndex = 0; // Reset letter index for the next word
+        typingText.textContent = ""; // Clear the text before typing the next word
+        setTimeout(typeWord, 500); // Wait before typing the next word
+    }
+}
+document.getElementById('welcome-text').addEventListener('click', function() {
+    document.getElementById('welcome-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    
+    // Play the background music
+    const audio = document.getElementById('background-music');
+    audio.play();
+    
+    // Start the typing effect after clicking to enter
+    typeWord();
 });
