@@ -7,7 +7,7 @@ document.getElementById('enterButton').addEventListener('click', function() {
   document.getElementById('mainContent').classList.remove('hidden');
 
   // Show background
-  document.body.style.backgroundImage = "url('https://files.catbox.moe/cs8tvr.gif')";
+  document.body.style.backgroundImage = "url('https://files.catbox.moe/4hr6mf.gif')";
 });
 
 // 3D mouse movement effect
