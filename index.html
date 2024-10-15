@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gtd @pzrc</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div id="landingPage" class="landing">
-    <h4><span id="enterButton" style="cursor: pointer; color: #fff;">[   ✱   ]</span></h4>
-  </div>
-  <div id="mainContent" class="container hidden">
-    <div class="profile">
-      <img src="https://files.catbox.moe/670n9s.jpg" alt="fuck you" class="profile-pic">
-      <h1>gutted/xoz</h1>
-      <p class="about">OSINT | CSINT</p>
+    <div id="welcome-screen">
+        <h1 id="welcome-text">[     🎕    ]</h1>
     </div>
-    <br>
-    <br>
-    <div class="links">
-      <a href="https://doxbin.org/user/xoz" target="_blank"><img src="https://files.catbox.moe/gs8sp6.png" class="link-icon" alt="Doxbin">Doxbin</a>
-      <a href="https://t.me/byexoz" target="_blank"><img src="https://files.catbox.moe/grt4hx.png" class="link-icon" alt="Telegram">Telegram</a>
-      <a href="https://etherscan.io/address/0x70485E7340f24BdC24CCc31d91Bd50A2CC3356B8" target="_blank"><img src="https://files.catbox.moe/x2uwsu.png" class="link-icon" alt="Ethereum Wallet">Ethereum Wallet</a>
-                 <a href="" target="_blank"><img src="https://files.catbox.moe/v3qgj0.png" class="link-icon" alt="xz@og.im - xmpp">xz@og.im - XMPP</a>
+    <div id="main-content" style="display: none;">
+        <h2>xoz/gutted</h2>
+        <div id="profile-section">
+            <div id="profile-picture">
+                <img src="https://files.catbox.moe/msve6s.jpg" alt="Profile Picture" id="profile-img">
+            </div>
+            <div id="typing-container">
+                <span id="typing-text"></span>
+            </div>
+        </div>
+        <div id="social-links">
+            <a href="https://doxbin.org/user/xoz" target="_blank">
+                <img src="https://files.catbox.moe/gs8sp6.png" alt="Doxbin" class="social-icon">
+            </a>
+            <a href="https://t.me/byexoz" target="_blank">
+                <img src="https://files.catbox.moe/grt4hx.png" alt="Telegram" class="social-icon">
+            </a>
+            <a href="https://etherscan.io/address/0x70485E7340f24BdC24CCc31d91Bd50A2CC3356B8" target="_blank">
+                <img src="https://files.catbox.moe/uhi6eg.png" alt="Ethereum Wallet" class="social-icon">
+            </a>
+            <a href="https://discord.gg/stupid" target="_blank">
+                <img src="https://files.catbox.moe/670n9s.jpg" alt="Discord" class="social-icon">
+            </a>
+        </div>
     </div>
-    <audio id="backgroundMusic">
-      <source src="https://files.catbox.moe/rcn93j.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-  <script src="scripts.js"></script>
+    
+    <audio id="background-music" src="https://files.catbox.moe/v62kpu.mp3" preload="auto" loop></audio>
+    
+    <script src="script.js"></script>
 </body>
 </html>
