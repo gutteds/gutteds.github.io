@@ -1,12 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sound-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.sound-icon i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.sound-icon:hover {
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.audio-player {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1d1d1d;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.close-player {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ff5555;
+}
+
+input[type="range"] {
+    width: 100%;
+    background: #555;
+    border-radius: 10px;
+    outline: none;
+    height: 5px;
+    margin-top: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: #4caf50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#background-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #000; /* Set background to black */
-    color: #fff; /* Text color for visibility */
+    background-color: #000;
+    color: #fff;
+}
+
+#main-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 #welcome-screen {
@@ -14,70 +106,73 @@ body {
 }
 
 #welcome-text {
-    cursor: pointer; /* Change cursor to pointer */
-    color: rgba(255, 255, 255, 0.8); /* Semi-transparent text color */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-    font-size: 16px; /* Smaller font size */
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s;
+    font-size: 16px;
 }
 
 #welcome-text:hover {
-    color: rgba(255, 255, 255, 1); /* Fully opaque text on hover */
-}
-
-#main-content {
-    text-align: center; /* Center text in main content */
-    margin-left: 0px; /* Move the whole content to the left */
+    color: rgba(255, 255, 255, 1);
 }
 
 h2 {
-    margin-left: -10px; /* Align heading with the profile picture */
+    margin-left: -10px;
+    font-weight: 700;
 }
 
 #profile-section {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Center items vertically */
-    margin: 20px auto; /* Center profile section */
-    position: relative; /* Position context for absolute elements */
+    display: flex;
+    align-items: center;
+    margin: 16px auto;
+    position: relative;
 }
 
 #profile-picture {
-    width: 150px; /* Set width for the profile picture box */
-    height: 150px; /* Set height for the profile picture box */
-    overflow: hidden; /* Hide overflow if the image is larger */
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
 }
 
 #profile-img {
-    width: 100%; /* Make the image fill the container */
-    height: 100%; /* Make the image fill the container */
-    object-fit: cover; /* Ensure the image covers the area */
-    border: 2px solid #fff; /* White border around the image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #fff;
 }
 
 #typing-container {
-    font-size: 18px; /* Font size for typing text */
-    color: #fff; /* Text color */
-    white-space: nowrap; /* Prevent line breaks */
-    overflow: hidden; /* Hide overflow */
-    margin-left: 10px; /* Space from the profile picture */
-    position: absolute; /* Absolutely position the text */
-    left: 160px; /* Position to the right of the profile picture */
-    top: 50%; /* Center vertically relative to the profile picture */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+    font-size: 18px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 10px;
+    position: absolute;
+    left: 160px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 #social-links {
-    display: flex; /* Use flexbox for even spacing */
-    justify-content: center; /* Center the links */
-    margin-top: 10px; /* Space between the profile and links */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .social-icon {
-    width: 30px; /* Set a fixed width for icons */
-    height: 30px; /* Set a fixed height for icons */
-    margin: 0 5px; /* Space between icons */
-    transition: transform 0.3s; /* Add a hover effect */
+    width: 30px;
+    height: 30px;
 }
 
-.social-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge icon on hover */
+.fade-in {
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
